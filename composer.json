@@ -1,0 +1,26 @@
+{
+	"name": "irsyadulibad/nik-validator",
+	"description": "Indonesian citizenship identification number validator",
+	"keywords": [
+		"Validator",
+		"NIK",
+		"NIK Validator"
+	],
+	"license": "MIT",
+	"authors": [
+		{
+			"name": "Ahmad Irsyadul Ibad",
+			"email": "ahmadirsyadulibad7@gmail.com",
+			"homepage": "http://irsyadulibad.my.id",
+			"role": "Developer"
+		}
+	],
+	"require": {
+		"php": ">=7.1"
+	},
+	"autoload": {
+		"psr-4": {
+			"Irsyadulibad\\NIKValidator\\": "src/"
+		}
+	}
+}
