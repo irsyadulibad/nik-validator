@@ -10,7 +10,7 @@ class Validator
 	{
 		$this->nik = $nik;
 		// Get location from assets and convert it to array
-		$wilayahPath = realpath('./assets/wilayah.json');
+		$wilayahPath = dirname(__FILE__) . '/assets/wilayah.json';
 		$this->location = json_decode(file_get_contents($wilayahPath), true);
 	}
 	
