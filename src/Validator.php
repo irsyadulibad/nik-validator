@@ -32,7 +32,7 @@ class Validator
 				'age' => $this->getAge(),
 				'nextBirthday' => $this->getNextBirthday(),
 				'zodiac' => $this->getZodiac(),
-				'address' => [
+				'address' => (object) [
 					'province' => $this->getProvince(),
 					'city' => $this->getCity(),
 					'subDistrict' => $this->getSubDistrict(),
@@ -95,7 +95,7 @@ class Validator
 		
 		$year = abs(gmdate('Y', $ageDate) - 1970);
 		$month = abs(gmdate('m', $ageDate));
-		$day = abs(gmdate('d', $ageDate));
+		$day = abs(gmdate('d', $ageDate) -1);
 		
 		return (object) compact('year', 'month', 'day');
 	}
@@ -107,7 +107,7 @@ class Validator
 		$diff = strtotime($bornDate) - time();
 		
 		$month = abs(gmdate('m', $diff));
-		$day = abs(gmdate('d', $diff));
+		$day = abs(gmdate('d', $diff) - 1);
 		
 		return (object) compact('month', 'day');
 	}
