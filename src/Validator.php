@@ -75,7 +75,7 @@ class Validator
 		
 		// Get born date
 		if($isFemale) $NIKdate -= 40;
-		$date = ($NIKdate > 10) ? strval($NIKdate) : "0$NIKdate";
+		$date = ($NIKdate >= 10) ? strval($NIKdate) : "0$NIKdate";
 		// Get born month
 		$month = substr($this->nik, 8, 2);
 		// Get born year
