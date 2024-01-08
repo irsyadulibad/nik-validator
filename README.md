@@ -10,9 +10,11 @@ composer require irsyadulibad/nik-validator
 * Example
 ```php
 <?php
+use Irsyadulibad\NIKValidator\Generator;
 use Irsyadulibad\NIKValidator\Validator;
 
-$parsed = Validator::set('35090xxxxxxxxxx')->parse();
+$nik = (new Generator())->generate();
+$parsed = Validator::set($nik)->parse();
 
 if($parsed->valid) {
     var_dump($parsed);
