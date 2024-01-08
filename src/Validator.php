@@ -18,6 +18,11 @@ class Validator
         );
     }
 
+    public static function set(string $nik): Validator
+    {
+        return new static($nik);
+    }
+
     public function parse(): object
     {
         if(!$this->isValid())
