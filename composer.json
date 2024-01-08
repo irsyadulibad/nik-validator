@@ -21,6 +21,9 @@
 	"autoload": {
 		"psr-4": {
 			"Irsyadulibad\\NIKValidator\\": "src/"
-		}
+		},
+        "files": [
+            "src/helpers.php"
+        ]
 	}
 }
