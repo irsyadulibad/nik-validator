@@ -8,13 +8,14 @@ use Irsyadulibad\NIKValidator\Enum\Gender;
 class Validator
 {
     private string $nik;
-    private object $regions;
+    private array $regions;
 
     public function __construct($nik)
     {
         $this->nik = $nik;
         $this->regions = json_decode(
-            file_get_contents(__DIR__ . '/assets/regions.json')
+            file_get_contents(__DIR__ . '/assets/regions.json'),
+            true
         );
     }
 
@@ -50,9 +51,9 @@ class Validator
         $subCode = substr($this->nik, 0, 6);
 
         return (object) [
-            'province' => $this->regions->provinces->$provCode ?? null,
-            'regency' => $this->regions->regencies->$regCode ?? null,
-            'subdistrict' => $this->regions->subdistricts->$subCode ?? null,
+            'province' => $this->regions['provinces'][$provCode] ?? null,
+            'regency' => $this->regions['regencies'][$regCode] ?? null,
+            'subdistrict' => $this->regions['subdistricts'][$subCode] ?? null,
         ];
     }
 

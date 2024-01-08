@@ -30,3 +30,9 @@ function zodiac(int $month, int $date): string
 
     return 'Unknown';
 }
+
+function getRandomEnumValue(array $enum) {
+    $keys = array_keys($enum);
+    $randomKey = $keys[array_rand($keys)];
+    return $enum[$randomKey];
+}
